@@ -117,7 +117,7 @@ export default function Home() {
 
             <div className="mt-10 flex gap-6 text-sm text-slate-400">
               <a
-                href="https://github.com/YOUR-GITHUB-USERNAME"
+                href="https://github.com/jaswantsaikrishna"
                 target="_blank"
                 rel="noreferrer"
                 className="transition hover:text-white"
@@ -126,7 +126,7 @@ export default function Home() {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME"
+                href="https://www.linkedin.com/in/jaswant-sk-843047302/"
                 target="_blank"
                 rel="noreferrer"
                 className="transition hover:text-white"
@@ -327,7 +327,7 @@ export default function Home() {
               </div>
 
               <a
-                href="mailto:YOUR-EMAIL-ADDRESS"
+                href="mailto:jaswant.saikrishna@gmail.com"
                 className="inline-flex w-fit rounded-full bg-white px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
               >
                 Send an email
