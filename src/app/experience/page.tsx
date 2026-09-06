@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import PageEndNav from "@/components/PageEndNav";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata = { title: "Experience" };
+export const metadata: Metadata = createPageMetadata({
+  title: "Experience",
+  description:
+    "Jaswant Sai Krishna's growing UX design experience through academic projects, research, collaboration and applied design work.",
+  path: "/experience",
+});
 
 export default function ExperiencePage() {
   return (
@@ -17,19 +24,6 @@ export default function ExperiencePage() {
       </header>
 
       <div className="experience-list">
-        <article>
-          <time>2026 — Present</time>
-          <div>
-            <p className="experience-type">Independent projects</p>
-            <h2>Research-led product explorations</h2>
-            <p>
-              Developing concepts such as Sahaja AI and DocPilot through problem
-              framing, user flows, prototypes, and case-study documentation.
-            </p>
-            <Link href="/projects#personal">View related projects ↗</Link>
-          </div>
-        </article>
-
         <article>
           <time>2025 — Present</time>
           <div>

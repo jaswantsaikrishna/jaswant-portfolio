@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import ProjectCard from "@/components/ProjectCard";
 import PageEndNav from "@/components/PageEndNav";
 import { projects, type ProjectCategory } from "@/data/projects";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata = { title: "Projects" };
+export const metadata: Metadata = createPageMetadata({
+  title: "UX Design Projects",
+  description:
+    "Explore Jaswant Sai Krishna's academic and research-led UX case studies in accessibility, service design and interaction design.",
+  path: "/projects",
+});
 
 const categories: Array<{ id: string; label: string; category: ProjectCategory }> = [
   { id: "academic", label: "Academic", category: "Academic" },

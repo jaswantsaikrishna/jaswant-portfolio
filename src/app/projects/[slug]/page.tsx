@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import PageEndNav from "@/components/PageEndNav";
@@ -6,6 +7,35 @@ import { projects } from "@/data/projects";
 
 export function generateStaticParams() {
   return projects.map(({ slug }) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((item) => item.slug === slug);
+  if (!project) return { title: "Project not found", robots: { index: false, follow: false } };
+
+  return {
+    title: project.title,
+    description: project.summary,
+    alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: {
+      type: "article",
+      url: `/projects/${project.slug}`,
+      title: project.title,
+      description: project.summary,
+      images: project.coverImage ? [{ url: project.coverImage, alt: `${project.title} project cover` }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.summary,
+      images: project.coverImage ? [project.coverImage] : undefined,
+    },
+  };
 }
 
 export default async function ProjectDetail({
@@ -38,7 +68,7 @@ export default async function ProjectDetail({
         {project.externalLinks?.length ? (
           <div className="case-actions" aria-label="Project resources">
             {project.externalLinks.map((item) => (
-              <a key={item.href} href={item.href} target="_blank" rel="noreferrer">
+              <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer">
                 {item.label} ↗
               </a>
             ))}
@@ -70,7 +100,7 @@ export default async function ProjectDetail({
             className="case-media-preview"
             href={project.presentationImage}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label={`Open the full ${project.title} presentation board`}
           >
             <Image
