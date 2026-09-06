@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import PageEndNav from "@/components/PageEndNav";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata = { title: "About" };
+export const metadata: Metadata = createPageMetadata({
+  title: "About",
+  description:
+    "Meet Jaswant Sai Krishna, a Bengaluru-based B.Des UX student focused on research, accessibility, multilingual experiences and interaction design.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

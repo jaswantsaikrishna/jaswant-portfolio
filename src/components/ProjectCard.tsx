@@ -19,7 +19,7 @@ export default function ProjectCard({
               <Image
                 className="project-cover-image"
                 src={project.coverImage}
-                alt={`${project.title} presentation preview`}
+                alt={`${project.title} project cover`}
                 fill
                 sizes="(max-width: 820px) 100vw, 55vw"
               />

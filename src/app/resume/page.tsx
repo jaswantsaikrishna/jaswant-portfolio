@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import ResumeActions from "@/components/ResumeActions";
 import ResumeDocument from "@/components/ResumeDocument";
 import PageEndNav from "@/components/PageEndNav";
 import { profile } from "@/data/profile";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata = { title: "Resume" };
+export const metadata: Metadata = createPageMetadata({
+  title: "Resume",
+  description:
+    "View Jaswant Sai Krishna's UX design resume, education, research skills, projects and professional profiles.",
+  path: "/resume",
+});
 
 export default function ResumePage() {
   return (
