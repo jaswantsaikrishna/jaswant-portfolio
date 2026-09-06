@@ -76,7 +76,7 @@ export const projects: Project[] = [
       "The team proposed a clearer mobile information structure, dedicated real-time bus tracking, easier access to route and bus-stop information, location-based facility search, larger text, reduced visual clutter, crowd indicators and reporting tools.",
     reflection:
       "The project showed that public-transport UX is not only an app problem. Information, physical environments, staff interactions, safety and accessibility all shape the commuter experience.",
-  },,
+  },
   {
     slug: "smart-inventory-restaurants",
     title: "Smart Inventory Management System for Restaurants",
