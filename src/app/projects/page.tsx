@@ -5,9 +5,8 @@ import { projects, type ProjectCategory } from "@/data/projects";
 export const metadata = { title: "Projects" };
 
 const categories: Array<{ id: string; label: string; category: ProjectCategory }> = [
-  { id: "personal", label: "Personal", category: "Personal" },
   { id: "academic", label: "Academic", category: "Academic" },
-  { id: "research", label: "Research", category: "Research" },
+  { id: "research", label: "Flagship / Research", category: "Research" },
   { id: "competition", label: "Competition Projects", category: "Competition" },
 ];
 
@@ -37,11 +36,17 @@ export default function ProjectsPage() {
               <p className="section-index">{item.label}</p>
               <span>{categoryProjects.length} {categoryProjects.length === 1 ? "project" : "projects"}</span>
             </div>
-            <div className="project-list">
-              {categoryProjects.map((project, index) => (
-                <ProjectCard key={project.slug} project={project} index={index} />
-              ))}
-            </div>
+            {item.category === "Competition" && categoryProjects.length === 0 ? (
+              <div className="project-coming-soon">
+                <p>Competition project coming soon.</p>
+              </div>
+            ) : (
+              <div className="project-list">
+                {categoryProjects.map((project, index) => (
+                  <ProjectCard key={project.slug} project={project} index={index} />
+                ))}
+              </div>
+            )}
           </section>
         );
       })}
