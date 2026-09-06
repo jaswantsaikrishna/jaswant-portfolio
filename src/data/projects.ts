@@ -77,4 +77,46 @@ export const projects: Project[] = [
     reflection:
       "The project showed that public-transport UX is not only an app problem. Information, physical environments, staff interactions, safety and accessibility all shape the commuter experience.",
   },
+  {
+    slug: "smart-inventory-restaurants",
+    title: "Smart Inventory Management System for Restaurants",
+    category: "Academic",
+    year: "August 2026",
+    summary:
+      "A Design Methods team project exploring how restaurant managers and staff could reduce repetitive stock checks while making low-stock, expiry and delivery information easier to act on.",
+    role: "Academic design team member",
+    duration: "Design Methods academic project",
+    tools: ["Figma", "Interviews", "Field observation", "Affinity mapping", "SCAMPER", "Crazy 8s", "User testing"],
+    tags: ["Restaurant operations", "Inventory management", "UX research", "Team project"],
+    accent: "green",
+    collaborative: true,
+    teamContext:
+      "Completed by Amrutha, Jaswant, Sindhuja and Swarup. This case study presents the team's shared research and design process without assigning unverified individual contributions.",
+    coverImage: "/projects/smart-inventory-cover.svg",
+    externalLinks: [
+      {
+        label: "Open Figma prototype",
+        href: "https://www.figma.com/proto/f2Pr89Z5xmqmVrocRcJGGW/CIE-5---Design-Methods---Semi-Working-Prototype?node-id=204-1027&t=gWKl79Kvm849Gcmg-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=74%3A2178",
+      },
+    ],
+    problem:
+      "Restaurant staff repeatedly check stock levels, expiry dates, quality and deliveries by hand. The team's fieldwork found that inventory checks can take roughly 30 to 90 minutes and remain partly manual even where restaurants use digital operating systems.",
+    research: [
+      "Approached 15 restaurants across two days and recorded 12 interviews with owners, managers and staff.",
+      "Observed restaurant work during busy and semi-busy periods, including inventory and restocking walkthroughs.",
+      "Synthesised evidence using coding, affinity mapping, empathy mapping and an ecosystem map.",
+      "Identified recurring needs around low-stock visibility, expiry urgency, quality checks, delivery tracking and reduced duplicate recording.",
+    ],
+    process: [
+      "Framed the opportunity: make day-to-day inventory management more efficient while reducing staff effort.",
+      "Generated concepts using SCAMPER and Crazy 8s, including automatic tracking, stock prediction and attention-based alerts.",
+      "Selected an automatic inventory-management concept for restaurant managers and owners.",
+      "Built a medium-fidelity Figma prototype covering inventory, reordering, deliveries, quality checks, expiry and billing updates.",
+      "Tested key tasks with five participants and iterated the prototype from their feedback.",
+    ],
+    outcome:
+      "The final concept helps staff identify low-stock and expiring products, reorder items, accept deliveries after quality checks, add inventory and understand automatic stock changes after sales. Testing led to clearer expiry indicators, a dedicated Add Item action, reorder confirmation, delivery feedback and improved issue visibility.",
+    reflection:
+      "The team initially expected stock levels and reordering to dominate. Testing showed that expiry management, delivery tracking and immediate visibility were equally important, reinforcing the value of research-led iteration and explicit system feedback.",
+  }
 ];
