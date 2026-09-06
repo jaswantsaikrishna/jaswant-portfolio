@@ -52,8 +52,12 @@ function GitHubIcon() {
 export default function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [projectsOpen, setProjectsOpen] = useState(false);
 
-  const closeMenu = () => setOpen(false);
+  const closeMenu = () => {
+    setOpen(false);
+    setProjectsOpen(false);
+  };
   const active = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
@@ -95,16 +99,31 @@ export default function SiteHeader() {
           About
         </Link>
 
-        <div className="nav-dropdown">
-          <Link
-            href="/projects"
-            className={`nav-tab nav-projects ${active("/projects") ? "active" : ""}`}
-            onClick={closeMenu}
-            aria-haspopup="true"
+        <div className={`nav-dropdown ${projectsOpen ? "projects-open" : ""}`}>
+          <div className="nav-projects-row">
+            <Link
+              href="/projects"
+              className={`nav-tab nav-projects ${active("/projects") ? "active" : ""}`}
+              onClick={closeMenu}
+            >
+              Projects <span className="dropdown-arrow desktop-arrow" aria-hidden="true">⌄</span>
+            </Link>
+            <button
+              className="project-submenu-toggle"
+              type="button"
+              onClick={() => setProjectsOpen((current) => !current)}
+              aria-expanded={projectsOpen}
+              aria-controls="project-category-navigation"
+              aria-label={projectsOpen ? "Collapse project categories" : "Expand project categories"}
+            >
+              <span aria-hidden="true">⌄</span>
+            </button>
+          </div>
+          <div
+            id="project-category-navigation"
+            className={`dropdown-menu ${projectsOpen ? "mobile-open" : ""}`}
+            aria-label="Project categories"
           >
-            Projects <span className="dropdown-arrow" aria-hidden="true">⌄</span>
-          </Link>
-          <div className="dropdown-menu" aria-label="Project categories">
             {projectCategories.map((item) => (
               <Link className="project-sub-link" key={item.href} href={item.href} onClick={closeMenu}>
                 {item.label}
