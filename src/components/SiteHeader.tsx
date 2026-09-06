@@ -106,7 +106,7 @@ export default function SiteHeader() {
               className={`nav-tab nav-projects ${active("/projects") ? "active" : ""}`}
               onClick={closeMenu}
             >
-              Projects <span className="dropdown-arrow desktop-arrow" aria-hidden="true">⌄</span>
+              Projects
             </Link>
             <button
               className="project-submenu-toggle"
