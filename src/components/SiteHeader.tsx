@@ -6,9 +6,8 @@ import { useState } from "react";
 import { profile } from "@/data/profile";
 
 const projectCategories = [
-  { label: "Personal", href: "/projects#personal" },
   { label: "Academic", href: "/projects#academic" },
-  { label: "Research", href: "/projects#research" },
+  { label: "Flagship / Research", href: "/projects#research" },
   { label: "Competition Projects", href: "/projects#competition" },
 ];
 
